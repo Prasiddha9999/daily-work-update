@@ -1,1 +1,25 @@
+name: Daily Work Update
 
+on:
+  schedule:
+    - cron: "0 9 * * *"   # Runs every day at 9:00 AM UTC
+  workflow_dispatch:       # allows manual trigger
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Today's Date
+        id: date
+        run: echo "today=$(date +"%B %d, %Y")" >> $GITHUB_OUTPUT
+
+      - name: Send Slack Message
+        run: |
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data "{
+              \"channel\": \"C0996FALSMA\",
+              \"text\": \"<!channel>\nDaily Work Updates ${{ steps.date.outputs.today }}\nPlease update your work on this thread.\"
+            }" \
+            https://slack.com/api/chat.postMessage
