@@ -1,8 +1,8 @@
 name: Daily Work Update
 
 on:
-  schedule:
-    - cron: "15 3 * * *"   # Runs at 9:00 AM Nepal Time
+  # schedule:
+  #   - cron: "15 3 * * *"   # Runs at 9:00 AM Nepal Time
   workflow_dispatch:      # allows manual trigger
 
 jobs:
