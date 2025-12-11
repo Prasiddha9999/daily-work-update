@@ -2,7 +2,7 @@ name: Daily Work Update
 
 on:
   schedule:
-    - cron: "* * * * *"    # Runs every 1 minute (for testing)
+    - cron: "*/2 * * * *"   # every 2 minutes
   workflow_dispatch:        # Allows manual trigger
 
 jobs:
