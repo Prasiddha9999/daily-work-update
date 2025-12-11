@@ -1,9 +1,9 @@
-name: Daily Work Update
+name: Daily Work Update Auto
 
 on:
   schedule:
-    - cron: "*/2 * * * *"   # every 2 minutes
-  workflow_dispatch:        # Allows manual trigger
+    - cron: "* * * * *"
+  workflow_dispatch:      # Allows manual trigger
 
 jobs:
   send-message:
