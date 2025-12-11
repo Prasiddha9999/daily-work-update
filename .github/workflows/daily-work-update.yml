@@ -1,9 +1,9 @@
 name: Daily Work Update
 
 on:
-  # schedule:
-  #   - cron: "15 3 * * *"   # Runs at 9:00 AM Nepal Time
-  workflow_dispatch:      # allows manual trigger
+  schedule:
+    - cron: "15 3 * * *"   # Runs at 9:00 AM Nepal Time
+  workflow_dispatch:        # Allows manual trigger
 
 jobs:
   send-message:
@@ -20,6 +20,14 @@ jobs:
             -H "Content-Type: application/json" \
             --data "{
               \"channel\": \"C0A3E15TLBB\",
-              \"text\": \"<!channel>\nDaily Work Updates ${{ steps.date.outputs.today }}\nPlease update your work on this thread.\"
+              \"blocks\": [
+                {
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"<!channel>\\n*Daily Work Updates*  \`$(date +'%B %d, %Y')\`\\nPlease update your work on this thread.\"
+                  }
+                }
+              ]
             }" \
             https://slack.com/api/chat.postMessage
