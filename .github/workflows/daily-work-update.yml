@@ -2,7 +2,7 @@ name: Daily Work Update
 
 on:
   schedule:
-    - cron: "45 16 * * *"   # Runs at 10:30 PM Nepal Time
+    - cron: "* * * * *"    # Runs every 1 minute (for testing)
   workflow_dispatch:        # Allows manual trigger
 
 jobs:
