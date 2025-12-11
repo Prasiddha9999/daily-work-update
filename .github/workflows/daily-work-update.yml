@@ -19,7 +19,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" \
             -H "Content-Type: application/json" \
             --data "{
-              \"channel\": \"C0996FALSMA\",
+              \"channel\": \"C0A3E15TLBB\",
               \"text\": \"<!channel>\nDaily Work Updates ${{ steps.date.outputs.today }}\nPlease update your work on this thread.\"
             }" \
             https://slack.com/api/chat.postMessage
