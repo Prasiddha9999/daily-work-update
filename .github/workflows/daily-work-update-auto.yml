@@ -17,7 +17,7 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" \
             -H "Content-Type: application/json" \
             --data "{
-              \"channel\": \"C0A3E15TLBB\",
+              \"channel\": \"C0996FALSMA\",
               \"blocks\": [
                 {
                   \"type\": \"section\",
