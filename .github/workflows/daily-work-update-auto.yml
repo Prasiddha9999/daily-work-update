@@ -23,7 +23,7 @@ jobs:
                   \"type\": \"section\",
                   \"text\": {
                     \"type\": \"mrkdwn\",
-                    \"text\": \"<!channel>\\n*Daily Work Updates*  \`$(date +'%B %d, %Y')\`\\nPlease update your work on this thread.\"
+                    \"text\": \"🎉 *Happy New Year!* 🎊🥳\\n\\n<!channel>\\n*Daily Work Updates*  \`$(date +'%B %d, %Y')\`\\nPlease update your work on this thread.\"
                   }
                 }
               ]
